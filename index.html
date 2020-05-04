@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+	<title> VueJs </title>
+</head>
+<body class="body">
+	<div class="container">
+		<div id="app" class="papers">
+			<h1>Getting started with VueJs</h1>
+
+			<h3>1. Render Data in VueJs</h3>
+			<div class="tab">
+				<p>My name is <b>{{name}}</b></p>
+				<p></p>
+				<button v-on:click="changeName">Click this button to change <b>Name</b></button>
+			</div>
+
+			<h3>2. IF Else</h3>
+			<div class="tab">
+				<p v-if="flags">
+					Flags is <b>True</b>
+				</p>
+				<p v-else="flags">
+					Flags is <b>False</b>
+				</p>
+				<button v-on:click="changeFlags">Click this button to change <b>Flags</b></button>
+			</div>
+
+			<h3>3. Loop </h3>
+			<div class="tab">
+				My favorite foods are :
+				<ul>
+					<li v-for="food in favFoods">
+						{{food}}
+					</li>
+				</ul>
+			</div>
+
+			<h3>4. Get input text with "V-Model" </h3>
+			<div class="tab">
+				The person that you love --> <input v-model="whos" placeholder="TYPE YOUR NAME">
+				<ol>
+					<li>
+						This one just using<b> v-model</b> :
+						<h4>{{whos}}</h4>
+					</li>
+					<li>
+						This one use <b>"Computed"</b> :
+						<h4>{{resultOfVmodel}}</h4>
+					</li>
+				</ol>
+				<p class="note">
+					Before you go to far, I need to comfirm that you get the concept in VueJs. In VueJs we can change page or data without refresh our browser. It means
+					when you changed the value inside your variable in javascript, the browser will response from your action. Let's see the next section.
+				</p>
+			</div>
+
+
+			<h3>5. Basic PoC in VueJS</h3>
+			<div class="tab">
+				<p>
+					Insert to my favorite food :
+					<input type="text" v-model="myfavoritefood" placeholder="food"/>
+					<button v-on:click="addToFavFoods">Add</button>
+				</p>
+<!--				<div class="code" >-->
+<!--					<p>the input text using v-model="myfavoritefood" &ndash;&gt; myfavoritefood:{{pocFavFoods}}</p>-->
+<!--					<p>the button using v-on:click="addToFavFoods"</p>-->
+<!--					<p>We are put "myfavoritefood"'s variable into "pocFavFood"</p>-->
+<!--					<p>pocFavFood = {{pocFavFoods}}</p>-->
+<!--				</div>-->
+				<p>My favorite foods are :</p>
+				<ul>
+					<li v-for="(food, index) in pocFavFoods" v-bind:key="pocFavFoods.id">
+						{{food.name}} <button v-on:click="removefood(index)">remove</button>
+					</li>
+				</ul>
+				<div class="code">
+					the list using unordered list with v-for="food in pocFavFood"
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+<!--	<div class="container">-->
+<!--		<div class="papers">-->
+<!--			<h1>Javascript</h1>-->
+<!--			<div class="tab coding"id="jsku" >-->
+<!--				<pre>-->
+<!--					<xmp>-->
+<!--						<b>asdf</b>-->
+<!--					</xmp>-->
+<!--				</pre>-->
+
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+	<link rel="stylesheet" type="text/css" href="css/App.css">
+	<script src="javascript/App.js"></script>
+</body>
+</html>
+

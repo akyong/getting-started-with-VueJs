@@ -1,0 +1,39 @@
+.body{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.tab{
+    margin-left: 20px;
+}
+
+.container{
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.papers{
+    /*background-image: url("images/whitenoise-361x370.png");*/
+    border-color: azure;
+    background-color: #FAFAFA;
+    box-shadow: 5px 10px #888888;
+    padding: 25px 15px 25px 15px;
+}
+
+
+.note{
+    font-style: italic;
+    color: darkred;
+}
+
+.code{
+    background-color: black;
+    color: cyan;
+    padding:10px;
+    /*margin: 5px;*/
+}
+.coding{
+    white-space: pre;
+}
